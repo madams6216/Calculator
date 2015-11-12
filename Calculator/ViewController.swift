@@ -44,16 +44,80 @@ class ViewController: UIViewController {
     }
 
     @IBAction func equalPressed(sender: AnyObject) {
+        
+        operand = calculatorResult(oprtr: op)
+        
+        resultsLabel.text = "\(operand)"
+        op = 0
+        setZero = true
+        
+        
+        
     }
     
     
     @IBAction func operatorPressed(sender: AnyObject) {
         
         
+        if op != 0 {
+            
+            operand = calculatorResult(oprtr: op)
+            resultsLabel.text = "\(operand)"
+            setZero = true
+            op = sender.tag
+            
+            
+        }else{
+            
+            let res: Int = Int(resultsLabel.text!)!
+            operand = res
+            setZero = true
+            op = sender.tag
+            
+
+            
+            
+            
+        
+        }
+
         
         
         
+    }
+    
+    
+    
+    func calculatorResult(oprtr oprtr: Int) -> Int{
+    
+    var returnValue: Int = Int(resultsLabel.text!)!
         
+        switch (oprtr){
+            
+        case 1:
+            returnValue = operand * returnValue
+            break
+       
+        case 2:
+            returnValue = operand / returnValue
+            break
+
+        
+        case 3:
+            returnValue = operand + returnValue
+            break
+
+            
+        case 4:
+            returnValue = operand - returnValue
+            break
+
+        default:
+            break
+        }
+    
+        
+        return returnValue
     }
     
     override func viewDidLoad() {
