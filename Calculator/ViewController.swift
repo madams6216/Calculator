@@ -11,11 +11,19 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    var op: Int = 0
+    var setZero: Bool = true
+    var operand: Int = 0
+    
+    
     @IBOutlet weak var resultsLabel: UILabel!
     
     @IBAction func numericPressed(sender: AnyObject) {
         
-        
+        if  setZero {
+            resultsLabel.text = "0"
+            setZero = false
+        }
         
         
         
@@ -30,9 +38,32 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func clearPressed(sender: AnyObject) {
+        
+        resultsLabel.text = "0"
+    }
 
+    @IBAction func equalPressed(sender: AnyObject) {
+    }
+    
+    
+    @IBAction func operatorPressed(sender: AnyObject) {
+        
+        
+        
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setZero = true
+        op = 0
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
