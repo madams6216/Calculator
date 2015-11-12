@@ -9,6 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var resultsLabel: UILabel!
+    
+    @IBAction func numericPressed(sender: AnyObject) {
+        
+        
+        
+        
+        
+        
+        var results: Int = Int(resultsLabel.text!)!
+        
+        
+        
+        
+        results = results * 10 + sender.tag
+        resultsLabel.text = "\(results)"
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
